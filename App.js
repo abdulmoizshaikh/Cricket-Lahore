@@ -6,16 +6,17 @@ import {
   ActivityIndicator,
   AsyncStorage
 } from "react-native";
-import SignIn from "./src/SignIn";
-import Startapp from "./src/Startapp";
-import Registration from "./src/Registration";
-import MainPage from "./src/MainPage";
+import SignIn from "./src/Pages/SignIn";
+import Startapp from "./src/Pages/Startapp";
+import Registration from "./src/Pages/Registration";
+import MainPage from "./src/routes";
+import CreateJoin from "./src/Pages/CreateJoin";
+
 import {
   createStackNavigator,
   createSwitchNavigator,
   createAppContainer
 } from "react-navigation";
-import CreateJoin from "./src/CreateJoin";
 
 class AuthLoadingScreen extends React.Component {
   constructor(props) {

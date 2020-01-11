@@ -3,7 +3,6 @@ import {View,Dimensions,Text,ImageBackground,ProgressBarAndroid,TouchableOpacity
 import {Item, Input,Button,Container,Content,Card,CardItem,Header,Body} from 'native-base';
 import { AsyncStorage } from 'react-native';
 import axios from 'axios';
-//import Profile from './Profile';
 
 var myBackground = require('../assets/icons/signin_img10.jpg');
 var height = Dimensions.get('window').height;
