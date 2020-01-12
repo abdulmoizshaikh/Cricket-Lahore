@@ -1,4 +1,4 @@
 export const actionTypes = {
-  // Auth
-  LOGIN: "LOGIN"
+  // TOURNAMENTS
+  GET_TOURNAMENTS: "GET_TOURNAMENTS"
 };

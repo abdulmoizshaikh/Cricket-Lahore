@@ -1,10 +1,10 @@
 import { actionTypes } from "../common";
 import { combineReducers } from "redux";
 // reducers
-import { productReducer } from "./productReducer";
+import { tournamentReducer } from "./tournamentReducer";
 
 const appReducer = combineReducers({
-  product: productReducer,
+  tournament: tournamentReducer
 });
 
 const rootReducer = (state, action) => {

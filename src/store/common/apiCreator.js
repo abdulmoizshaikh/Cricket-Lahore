@@ -1,7 +1,6 @@
-
 import { actionCreator } from "../common";
 import axios from "axios";
-const serverURL = "https://matjars-server.herokuapp.com";
+const serverURL = "http://demo.ciitlhr.hosting.acm.org/public/api";
 
 const optionsCretor = props => {
   return {
@@ -15,14 +14,18 @@ const optionsCretor = props => {
 
 export const apiCreator = async (props, type, dispatch, state) => {
   return new Promise((resolve, reject) => {
+    console.log(optionsCretor(props));
     axios(optionsCretor(props))
       .then(response => {
-        const { result } = response.data;
+        console.log("apiCreator response", response);
+        const { success, data } = response;
         if (type) {
-          dispatch(actionCreator(type, { result: result, state: state }));
+          dispatch(actionCreator(type, { result: data, state: state }));
         }
-        resolve(result);
+        resolve(data);
       })
-      .catch(error => reject(error));
+      .catch(error => {
+        reject(error);
+      });
   });
 };

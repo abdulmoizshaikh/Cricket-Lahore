@@ -115,160 +115,152 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Container style={{ paddingTop: 23 }}>
-          <ImageBackground source={myBackground} style={styles.backgroundImage}>
-            <Header style={{ backgroundColor: "#154360" }}>
-              <Left>
-                <Button transparent onPress={this.toggleDrawer.bind(this)}>
-                  <Icon name="menu" />
-                </Button>
-              </Left>
-              <Body>
-                <Text
-                  style={{
-                    color: "#fff",
-                    fontWeight: "bold",
-                    fontSize: 25,
-                    paddingLeft: "10%"
-                  }}
+      <Container style={styles.container}>
+        <ImageBackground source={myBackground} style={styles.backgroundImage}>
+          <Header style={{ backgroundColor: "#154360" }}>
+            <Left>
+              <Button transparent onPress={this.toggleDrawer.bind(this)}>
+                <Icon name="menu" />
+              </Button>
+            </Left>
+            <Body>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontWeight: "bold",
+                  fontSize: 25,
+                  paddingLeft: "10%"
+                }}
+              >
+                Cricket Zone
+              </Text>
+            </Body>
+            <Right>
+              <Button transparent onPress={this._twoOptionAlertHandler}>
+                <Icon name="log-out" />
+              </Button>
+            </Right>
+          </Header>
+          <View style={{ padding: 10 }}>
+            <View style={{ flexDirection: "row" }}>
+              <Content>
+                <TouchableOpacity
+                  style={styles.touchablestyle}
+                  onPress={() => this.props.navigation.navigate("TeamPlayers")}
                 >
-                  Cricket Zone
-                </Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={this._twoOptionAlertHandler}>
-                  <Icon name="log-out" />
-                </Button>
-              </Right>
-            </Header>
-            <View style={{ padding: 10 }}>
-              <View style={{ flexDirection: "row" }}>
-                <Content>
-                  <TouchableOpacity
-                    style={styles.touchablestyle}
-                    onPress={() =>
-                      this.props.navigation.navigate("TeamPlayers")
-                    }
-                  >
-                    <Card>
-                      <CardItem style={styles.cardcolor}>
-                        <Body style={styles.bodystyle}>
-                          <Image
-                            source={myimage}
-                            style={{ height: 70, width: 70, borderRadius: 5 }}
-                          />
-                          <Text style={styles.textstyle}>Team Playerz</Text>
-                        </Body>
-                      </CardItem>
-                    </Card>
-                  </TouchableOpacity>
-                </Content>
-                <Text></Text>
-                <Content>
-                  <TouchableOpacity
-                    style={styles.touchablestyle}
-                    onPress={() =>
-                      this.props.navigation.navigate("SelectedEleven")
-                    }
-                  >
-                    <Card>
-                      <CardItem style={styles.cardcolor}>
-                        <Body style={styles.bodystyle}>
-                          <Image
-                            source={myimage}
-                            style={{ height: 70, width: 70, borderRadius: 5 }}
-                          />
-                          <Text style={styles.textstyle}> Selected 11</Text>
-                        </Body>
-                      </CardItem>
-                    </Card>
-                  </TouchableOpacity>
-                </Content>
-              </View>
-              <View style={{ flexDirection: "row" }}>
-                <Content>
-                  <TouchableOpacity
-                    style={styles.touchablestyle}
-                    onPress={() =>
-                      this.props.navigation.navigate("UpcommingTrmnt")
-                    }
-                  >
-                    <Card>
-                      <CardItem style={styles.cardcolor}>
-                        <Body style={styles.bodystyle}>
-                          <Image
-                            source={myimage}
-                            style={{ height: 70, width: 70, borderRadius: 5 }}
-                          />
-                          <Text style={styles.textstyle}>
-                            Comming Tournament
-                          </Text>
-                        </Body>
-                      </CardItem>
-                    </Card>
-                  </TouchableOpacity>
-                </Content>
-                <Content>
-                  <TouchableOpacity
-                    style={styles.touchablestyle}
-                    onPress={() =>
-                      this.props.navigation.navigate("JoinedTrmnt")
-                    }
-                  >
-                    <Card>
-                      <CardItem style={styles.cardcolor}>
-                        <Body style={styles.bodystyle}>
-                          <Image
-                            source={myimage}
-                            style={{ height: 70, width: 70, borderRadius: 5 }}
-                          />
-                          <Text style={styles.textstyle}>Join Tournament</Text>
-                        </Body>
-                      </CardItem>
-                    </Card>
-                  </TouchableOpacity>
-                </Content>
-              </View>
-              <View style={{ flexDirection: "row" }}>
-                <Content>
-                  <TouchableOpacity style={styles.touchablestyle}>
-                    <Card>
-                      <CardItem style={styles.cardcolor}>
-                        <Body style={styles.bodystyle}>
-                          <Image
-                            source={myimage}
-                            style={{ height: 70, width: 70, borderRadius: 5 }}
-                          />
-                          <Text style={styles.textstyle}>Match Details</Text>
-                        </Body>
-                      </CardItem>
-                    </Card>
-                  </TouchableOpacity>
-                </Content>
-                <Content>
-                  <TouchableOpacity
-                    style={styles.touchablestyle}
-                    onPress={() => this.props.navigation.navigate("AddPlayer")}
-                  >
-                    <Card>
-                      <CardItem style={styles.cardcolor}>
-                        <Body style={styles.bodystyle}>
-                          <Image
-                            source={myimage}
-                            style={{ height: 70, width: 70, borderRadius: 5 }}
-                          />
-                          <Text style={styles.textstyle}>Add Players</Text>
-                        </Body>
-                      </CardItem>
-                    </Card>
-                  </TouchableOpacity>
-                </Content>
-              </View>
+                  <Card>
+                    <CardItem style={styles.cardcolor}>
+                      <Body style={styles.bodystyle}>
+                        <Image
+                          source={myimage}
+                          style={{ height: 70, width: 70, borderRadius: 5 }}
+                        />
+                        <Text style={styles.textstyle}>Team Playerz</Text>
+                      </Body>
+                    </CardItem>
+                  </Card>
+                </TouchableOpacity>
+              </Content>
+              <Text></Text>
+              <Content>
+                <TouchableOpacity
+                  style={styles.touchablestyle}
+                  onPress={() =>
+                    this.props.navigation.navigate("SelectedEleven")
+                  }
+                >
+                  <Card>
+                    <CardItem style={styles.cardcolor}>
+                      <Body style={styles.bodystyle}>
+                        <Image
+                          source={myimage}
+                          style={{ height: 70, width: 70, borderRadius: 5 }}
+                        />
+                        <Text style={styles.textstyle}> Selected 11</Text>
+                      </Body>
+                    </CardItem>
+                  </Card>
+                </TouchableOpacity>
+              </Content>
             </View>
-          </ImageBackground>
-        </Container>
-      </View>
+            <View style={{ flexDirection: "row" }}>
+              <Content>
+                <TouchableOpacity
+                  style={styles.touchablestyle}
+                  onPress={() =>
+                    this.props.navigation.navigate("UpcommingTrmnt")
+                  }
+                >
+                  <Card>
+                    <CardItem style={styles.cardcolor}>
+                      <Body style={styles.bodystyle}>
+                        <Image
+                          source={myimage}
+                          style={{ height: 70, width: 70, borderRadius: 5 }}
+                        />
+                        <Text style={styles.textstyle}>Comming Tournament</Text>
+                      </Body>
+                    </CardItem>
+                  </Card>
+                </TouchableOpacity>
+              </Content>
+              <Content>
+                <TouchableOpacity
+                  style={styles.touchablestyle}
+                  onPress={() => this.props.navigation.navigate("JoinedTrmnt")}
+                >
+                  <Card>
+                    <CardItem style={styles.cardcolor}>
+                      <Body style={styles.bodystyle}>
+                        <Image
+                          source={myimage}
+                          style={{ height: 70, width: 70, borderRadius: 5 }}
+                        />
+                        <Text style={styles.textstyle}>Join Tournament</Text>
+                      </Body>
+                    </CardItem>
+                  </Card>
+                </TouchableOpacity>
+              </Content>
+            </View>
+            <View style={{ flexDirection: "row" }}>
+              <Content>
+                <TouchableOpacity style={styles.touchablestyle}>
+                  <Card>
+                    <CardItem style={styles.cardcolor}>
+                      <Body style={styles.bodystyle}>
+                        <Image
+                          source={myimage}
+                          style={{ height: 70, width: 70, borderRadius: 5 }}
+                        />
+                        <Text style={styles.textstyle}>Match Details</Text>
+                      </Body>
+                    </CardItem>
+                  </Card>
+                </TouchableOpacity>
+              </Content>
+              <Content>
+                <TouchableOpacity
+                  style={styles.touchablestyle}
+                  onPress={() => this.props.navigation.navigate("AddPlayer")}
+                >
+                  <Card>
+                    <CardItem style={styles.cardcolor}>
+                      <Body style={styles.bodystyle}>
+                        <Image
+                          source={myimage}
+                          style={{ height: 70, width: 70, borderRadius: 5 }}
+                        />
+                        <Text style={styles.textstyle}>Add Players</Text>
+                      </Body>
+                    </CardItem>
+                  </Card>
+                </TouchableOpacity>
+              </Content>
+            </View>
+          </View>
+        </ImageBackground>
+      </Container>
     );
   }
 }

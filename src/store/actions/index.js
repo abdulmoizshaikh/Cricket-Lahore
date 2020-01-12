@@ -1,3 +1,3 @@
-// import * as authActions from "./authActions";
+import * as tournamentActions from "./tournamentActions";
 
-// export { authActions };
+export { tournamentActions };
