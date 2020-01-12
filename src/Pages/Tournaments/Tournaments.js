@@ -18,6 +18,7 @@ import {
 } from "native-base";
 import { tournamentActions } from "../../store/actions";
 import { useDispatch } from "react-redux";
+import { SpinnerComponent } from "../../components/Spinner";
 
 // import * as utils from "../../utils";
 
@@ -61,7 +62,7 @@ export default function Tournaments(props) {
       </Header>
 
       {isLoading ? (
-        <Spinner />
+        <SpinnerComponent />
       ) : (
         <Content>
           <List>

@@ -21,6 +21,8 @@ import { tournamentActions } from "../../store/actions";
 import { useDispatch } from "react-redux";
 import ModalExample from "../../components/Modal";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { SpinnerComponent } from "../../components/Spinner";
+
 // import * as utils from "../../utils";
 
 export default function Matches(props) {
@@ -108,7 +110,7 @@ export default function Matches(props) {
       />
 
       {isLoading ? (
-        <Spinner />
+        <SpinnerComponent />
       ) : (
         <Content padder>
           {matchesList.length === 0 ? (
