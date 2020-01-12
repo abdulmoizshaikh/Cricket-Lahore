@@ -111,16 +111,12 @@ export default function Matches(props) {
 
       {isLoading ? (
         <SpinnerComponent />
+      ) : matchesList.length === 0 ? (
+        <View style={styles.notFountView}>
+          <Text style={styles.notFountText}>No Match Found</Text>
+        </View>
       ) : (
-        <Content padder>
-          {matchesList.length === 0 ? (
-            <View style={styles.notFountView}>
-              <Text style={styles.notFountText}>No Match Found</Text>
-            </View>
-          ) : (
-            matchesList.map(match => matchCard(match))
-          )}
-        </Content>
+        <Content padder>{matchesList.map(match => matchCard(match))}</Content>
       )}
     </Container>
   );
@@ -139,10 +135,11 @@ export const styles = StyleSheet.create({
   notFountView: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   notFountText: {
-    textAlign: "center"
+    textAlign: "center",
+    fontSize: 20
   },
   ListItemright: {
     flex: 1
