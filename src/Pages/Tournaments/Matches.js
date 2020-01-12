@@ -55,10 +55,11 @@ export default function Matches(props) {
     setModalVisible(true);
     setModalData(match);
   }
+
   function onRequestClose() {
-    console.log("onRequestClose");
     setModalVisible(false);
   }
+
   function matchCard(match) {
     return (
       <TouchableOpacity key={match.id} onPress={() => showModal(match)}>
