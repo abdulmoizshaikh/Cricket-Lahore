@@ -27,7 +27,6 @@ export default class ModalExample extends Component {
       !Boolean(tournamentId) &&
       !Boolean(matchId)
     ) {
-      // console.log("@@@@@@@@@@@@@@modalData", modalData);
       this.setState({
         data: {
           ...this.state.data,
@@ -55,7 +54,6 @@ export default class ModalExample extends Component {
 
   render() {
     const { modalVisible, modalData, onRequestClose } = this.props;
-    // console.log("modalData", modalData);
 
     return (
       // <Container style={{ backgroundColor: "gray" }}>

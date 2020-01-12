@@ -11,22 +11,17 @@ import {
   Icon,
   Button,
   Title,
-  Spinner,
   Content,
   List,
   ListItem,
   Card
 } from "native-base";
-import { tournamentActions } from "../../store/actions";
-import { useDispatch } from "react-redux";
 import ModalExample from "../../components/Modal";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { SpinnerComponent } from "../../components/Spinner";
-
-// import * as utils from "../../utils";
+import { apiCreator } from "../../common/index";
 
 export default function Matches(props) {
-  const dispatch = useDispatch();
   const [matchesList, setMatchesList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
@@ -41,14 +36,15 @@ export default function Matches(props) {
     try {
       setIsLoading(true);
       const { tournmanetId } = props.navigation.state.params;
-      const response = await dispatch(
-        tournamentActions.getTournamentMatches({ tournament_id: tournmanetId })
-      );
+      const response = await apiCreator({
+        method: "POST",
+        endPoint: "/matchsSchedule",
+        body: { tournament_id: tournmanetId }
+      });
       setMatchesList(response.matches ? response.matches : []);
       setIsLoading(false);
     } catch (error) {
       console.log(error);
-      // utils._toast("Somthing went Wrong! in get Categories", "error");
       setIsLoading(false);
     }
   }
@@ -135,7 +131,7 @@ export const styles = StyleSheet.create({
   notFountView: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   },
   notFountText: {
     textAlign: "center",

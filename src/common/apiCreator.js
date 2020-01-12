@@ -1,4 +1,3 @@
-import { actionCreator } from "../common";
 import axios from "axios";
 const serverURL = "http://demo.ciitlhr.hosting.acm.org/public/api";
 
@@ -12,16 +11,13 @@ const optionsCretor = props => {
   };
 };
 
-export const apiCreator = async (props, type, dispatch, state) => {
+export const apiCreator = async props => {
   return new Promise((resolve, reject) => {
     console.log(optionsCretor(props));
     axios(optionsCretor(props))
       .then(response => {
         console.log("apiCreator response", response);
         const { success, data } = response;
-        if (type) {
-          dispatch(actionCreator(type, { result: data, state: state }));
-        }
         resolve(data);
       })
       .catch(error => {

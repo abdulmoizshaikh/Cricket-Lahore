@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Root } from "native-base";
-import { Provider } from "react-redux";
-import store from "./src/store";
 import Main from "./Main";
 import * as Font from "expo-font";
 
@@ -16,11 +14,11 @@ export default class App extends Component {
 
   render() {
     return (
-      <Provider store={store}>
-        <Root>
-          <Main />
-        </Root>
-      </Provider>
+      // <Provider store={store}>
+      <Root>
+        <Main />
+      </Root>
+      // </Provider>
     );
   }
 }

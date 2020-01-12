@@ -16,16 +16,12 @@ import {
   List,
   ListItem
 } from "native-base";
-import { tournamentActions } from "../../store/actions";
-import { useDispatch } from "react-redux";
+import { apiCreator } from "../../common/index";
 import { SpinnerComponent } from "../../components/Spinner";
-
-// import * as utils from "../../utils";
 
 export default function Tournaments(props) {
   const [tournamentList, setTournamentList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     setIsLoading(true);
@@ -35,7 +31,11 @@ export default function Tournaments(props) {
   async function getTournamentsHandler() {
     try {
       setIsLoading(true);
-      const response = await dispatch(tournamentActions.getTournaments());
+      const response = await apiCreator({
+        method: "GET",
+        endPoint: "/tournament"
+      });
+      console.log("response", response);
       setTournamentList(response.data);
       setIsLoading(false);
     } catch (error) {
