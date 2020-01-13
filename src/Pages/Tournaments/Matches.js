@@ -87,7 +87,7 @@ export default function Matches(props) {
 
   return (
     <Container style={styles.Container}>
-      <Header translucent={false}>
+      <Header translucent={false} style={{ backgroundColor: "#154360" }}>
         <Left style={styles.flex1}>
           <Button transparent onPress={() => props.navigation.goBack()}>
             <Icon name="arrow-back" />

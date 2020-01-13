@@ -49,7 +49,7 @@ export default function Tournaments(props) {
   }
   return (
     <Container>
-      <Header translucent={false}>
+      <Header translucent={false} style={{ backgroundColor: "#154360" }}>
         <Left style={styles.flex1}>
           <Button transparent onPress={() => props.navigation.toggleDrawer()}>
             <Icon name="menu" />

@@ -77,7 +77,7 @@ render(){
     return(
      
         <View style={{flex:1}}>
-         <Container  style={{paddingTop:23,backgroundColor:'#154360'}}>    
+         <Container  style={{backgroundColor:'#154360'}}>    
             <Header style={{backgroundColor:'#3C7DFE'}} >
                         <Left>
                             <Button transparent  onPress={() => this.props.navigation.navigate('CreateJoin')} >
