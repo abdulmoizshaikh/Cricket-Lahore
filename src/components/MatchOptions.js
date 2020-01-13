@@ -9,18 +9,19 @@ import {
   ScrollView
 } from 'react-native';
 
-import { Actions } from 'react-native-router-flux';
+// import { Actions } from 'react-native-router-flux';
 
 export default class MatchOptions extends Component {
   _handleMatchPress(item) {
-    Actions.single_match_inn1({ match: item });
+    // Actions.single_match_inn1({ match: item });
+    this.props.navigation.navigate("single_match_inn1");
   }
 
   render() {
     return (
         <FlatList
-          data={[{ id: '0', title: 'SINGLE MATCH', img_url: require('./../../assets/single-match-icon.png')},
-                 { id: '1', title: 'TOURNAMENT', img_url: require('./../../assets/tournament-icon.png')},
+          data={[{ id: '0', title: 'SINGLE MATCH', img_url: require('../assets/single-match-icon.png')},
+                 { id: '1', title: 'TOURNAMENT', img_url: require('../assets/tournament-icon.png')},
                 ]}
           keyExtractor={ item => item.id }
           renderItem={({ item }) => (

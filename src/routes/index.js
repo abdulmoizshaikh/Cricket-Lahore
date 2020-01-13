@@ -19,6 +19,10 @@ import Profile from "../Pages/Profile";
 import CreateJoin from "../Pages/CreateJoin";
 import { Tournaments, Matches } from "../Pages/Tournaments";
 import drawerContentComponents from "../Pages/drawerContentComponents";
+
+import HomeScreen from "../screens/Home";
+import SingleMatchInn1Screen from "../screens/SingleMatch_Inn1";
+import SingleMatchInn2Screen from "../screens/SingleMatch_Inn2";
 //drawer code
 
 // const MainPage_StackNavigator = createStackNavigator({
@@ -370,7 +374,12 @@ const StackNavigator = createStackNavigator(
     // },
     StartMatch: StartMatch,
     Tournaments: Tournaments,
-    Matches: Matches
+    Matches: Matches,
+    
+    match_list: HomeScreen,
+    single_match_inn1: SingleMatchInn1Screen,
+    single_match_inn2: SingleMatchInn2Screen
+
     //  {
     //   //Title
     //   screen: StartMatch_StackNavigator

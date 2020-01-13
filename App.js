@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Root } from "native-base";
 import Main from "./Main";
+// import CricketRoutes from "./CricketRoutes";
 import * as Font from "expo-font";
 import { Provider } from "react-redux";
 import matchStore from "./src/store";
@@ -19,6 +20,7 @@ export default class App extends Component {
       <Provider store={matchStore}>
         <Root>
           <Main />
+          {/* <CricketRoutes /> */}
         </Root>
       </Provider>
     );

@@ -22,7 +22,7 @@ const UndoRedoButtons = ({ canUndo, canRedo, onUndo, onRedo }) => {
         <View>
           <Image
             style={{ width: 40, height: 40, marginRight: 4 }}
-            source={require('./../../../assets/undo.png')}
+            source={require('../../assets/undo.png')}
           />
         </View>
       </TouchableOpacity>
@@ -36,7 +36,7 @@ const UndoRedoButtons = ({ canUndo, canRedo, onUndo, onRedo }) => {
 
           <Image
             style={{ width: 40, height: 40, marginLeft: 4 }}
-            source={require('./../../../assets/redo.png')}
+            source={require('./../../assets/redo.png')}
           />
         </View>
       </TouchableOpacity>
