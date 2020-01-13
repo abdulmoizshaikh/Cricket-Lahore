@@ -50,6 +50,7 @@ export default class ModalExample extends Component {
   onPlayMatch = () => {
     console.log("this.state.data", this.state.data);
     this.props.onRequestClose();
+    this.props.navigation.navigate("match_list");
   };
 
   render() {

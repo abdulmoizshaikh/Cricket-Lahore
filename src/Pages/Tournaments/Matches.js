@@ -103,6 +103,7 @@ export default function Matches(props) {
         modalVisible={modalVisible}
         onRequestClose={onRequestClose}
         modalData={modalData}
+        navigation={props.navigation}
       />
 
       {isLoading ? (
